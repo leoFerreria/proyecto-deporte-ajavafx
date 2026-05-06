@@ -1,0 +1,1 @@
+<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.bookings.BookingsController"">`n  <Label text=""Gestion de Reservas""/>`n</VBox>
