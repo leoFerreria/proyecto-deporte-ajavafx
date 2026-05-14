@@ -1,1 +1,19 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.bookings.BookingsController"">`n  <Label text=""Gestion de Reservas""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.bookings.BookingsController" spacing="10" style="-fx-padding: 20;">
+  <Label text="Gestion de Reservas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+  <Label fx:id="infoLabel" textFill="ORANGE"/>
+  <ProgressIndicator fx:id="loadingIndicator"/>
+  <TableView fx:id="bookingsTable" VBox.vgrow="ALWAYS">
+    <columns>
+      <TableColumn fx:id="colId" text="ID" prefWidth="180"/>
+      <TableColumn fx:id="colDateTime" text="Fecha/Hora" prefWidth="150"/>
+      <TableColumn fx:id="colCourt" text="Pista" prefWidth="120"/>
+      <TableColumn fx:id="colPlayer1" text="Jugador 1" prefWidth="120"/>
+      <TableColumn fx:id="colPlayer2" text="Jugador 2" prefWidth="120"/>
+      <TableColumn fx:id="colFull" text="Completa" prefWidth="80"/>
+      <TableColumn fx:id="colActions" text="Acciones" prefWidth="120"/>
+    </columns>
+  </TableView>
+</VBox>

@@ -1,1 +1,11 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.VBox?>`n<?import javafx.scene.control.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.LoginController"" spacing=""10"" alignment=""CENTER"">`n  <Label text=""Login Admin"" style=""-fx-font-size: 24px;""/>`n  <TextField fx:id=""emailField"" promptText=""Email""/>`n  <PasswordField fx:id=""passwordField"" promptText=""Password""/>`n  <Button text=""Entrar"" onAction=""#handleLogin""/>`n  <Label fx:id=""errorLabel"" textFill=""RED""/>`n  <ProgressIndicator fx:id=""loadingIndicator""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.LoginController" spacing="10" alignment="CENTER" style="-fx-padding: 30;">
+  <Label text="Login Admin" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+  <TextField fx:id="emailField" promptText="Email" maxWidth="250"/>
+  <PasswordField fx:id="passwordField" promptText="Password" maxWidth="250"/>
+  <Button text="Entrar" onAction="#handleLogin" maxWidth="250"/>
+  <Label fx:id="errorLabel" textFill="RED"/>
+  <ProgressIndicator fx:id="loadingIndicator"/>
+</VBox>

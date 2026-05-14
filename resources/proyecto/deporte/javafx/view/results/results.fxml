@@ -1,1 +1,7 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.results.ResultsController"">`n  <Label text=""Modificacion de Resultados""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.results.ResultsController" spacing="10" style="-fx-padding: 20;">
+  <Label text="Modificacion de Resultados" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+  <Label text="(Implementar cuando el endpoint de resultados este listo)"/>
+</VBox>

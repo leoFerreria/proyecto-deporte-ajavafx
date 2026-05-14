@@ -1,23 +1,25 @@
 package proyecto.deporte.javafx.model.dto;
 
+import java.time.LocalDate;
+
 public class MatchResultDTO {
-    private Long id;
-    private Long bookingId;
-    private Long winnerId;
-    private Long loserId;
-    private Integer setsWon;
-    private Integer setsLost;
-    // getters y setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public Long getBookingId() { return bookingId; }
-    public void setBookingId(Long bookingId) { this.bookingId = bookingId; }
-    public Long getWinnerId() { return winnerId; }
-    public void setWinnerId(Long winnerId) { this.winnerId = winnerId; }
-    public Long getLoserId() { return loserId; }
-    public void setLoserId(Long loserId) { this.loserId = loserId; }
-    public Integer getSetsWon() { return setsWon; }
-    public void setSetsWon(Integer setsWon) { this.setsWon = setsWon; }
-    public Integer getSetsLost() { return setsLost; }
-    public void setSetsLost(Integer setsLost) { this.setsLost = setsLost; }
+    private String id;
+    private String bookingId;
+    private int player1Sets;
+    private int player2Sets;
+    private String winnerId;
+    private LocalDate matchDate;
+
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getBookingId() { return bookingId; }
+    public void setBookingId(String bookingId) { this.bookingId = bookingId; }
+    public int getPlayer1Sets() { return player1Sets; }
+    public void setPlayer1Sets(int player1Sets) { this.player1Sets = player1Sets; }
+    public int getPlayer2Sets() { return player2Sets; }
+    public void setPlayer2Sets(int player2Sets) { this.player2Sets = player2Sets; }
+    public String getWinnerId() { return winnerId; }
+    public void setWinnerId(String winnerId) { this.winnerId = winnerId; }
+    public LocalDate getMatchDate() { return matchDate; }
+    public void setMatchDate(LocalDate matchDate) { this.matchDate = matchDate; }
 }

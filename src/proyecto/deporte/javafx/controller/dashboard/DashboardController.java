@@ -1,3 +1,7 @@
 package proyecto.deporte.javafx.controller.dashboard;
 
-public class DashboardController extends proyecto.deporte.javafx.controller.BaseController { }
+import proyecto.deporte.javafx.controller.BaseController;
+
+public class DashboardController extends BaseController {
+    // Pantalla de bienvenida / resumen
+}

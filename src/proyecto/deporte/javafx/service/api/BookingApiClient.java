@@ -8,12 +8,12 @@ import java.util.concurrent.CompletableFuture;
 
 public class BookingApiClient extends ApiClient {
     public CompletableFuture<List<BookingDTO>> getAllBookings() {
-        HttpRequest request = buildRequest(""/bookings/all"").GET().build();
+        HttpRequest request = buildRequest("/bookings/all").GET().build();
         return sendAsync(request, new TypeReference<List<BookingDTO>>() {});
     }
 
-    public CompletableFuture<Void> cancelBooking(Long id) {
-        HttpRequest request = buildRequest(""/bookings/"" + id).DELETE().build();
+    public CompletableFuture<Void> cancelBooking(String id) {
+        HttpRequest request = buildRequest("/bookings/" + id).DELETE().build();
         return sendAsync(request, String.class).thenApply(s -> null);
     }
 }

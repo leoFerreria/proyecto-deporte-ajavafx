@@ -1,1 +1,16 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.courts.CourtsController"">`n  <Label text=""Gestion de Pistas""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.courts.CourtsController" spacing="10" style="-fx-padding: 20;">
+  <Label text="Gestion de Pistas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+  <ProgressIndicator fx:id="loadingIndicator"/>
+  <TableView fx:id="courtsTable" VBox.vgrow="ALWAYS">
+    <columns>
+      <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+      <TableColumn fx:id="colName" text="Nombre" prefWidth="150"/>
+      <TableColumn fx:id="colSport" text="Deporte" prefWidth="120"/>
+      <TableColumn fx:id="colStatus" text="Estado" prefWidth="120"/>
+      <TableColumn fx:id="colActions" text="Acciones" prefWidth="150"/>
+    </columns>
+  </TableView>
+</VBox>

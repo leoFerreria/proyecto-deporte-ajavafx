@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class CourtApiClient extends ApiClient {
     public CompletableFuture<List<CourtDTO>> getAllCourts() {
-        HttpRequest request = buildRequest(""/courts"").GET().build();
+        HttpRequest request = buildRequest("/courts").GET().build();
         return sendAsync(request, new TypeReference<List<CourtDTO>>() {});
     }
 }

@@ -2,6 +2,7 @@ package proyecto.deporte.javafx.controller;
 
 import proyecto.deporte.javafx.config.SessionManager;
 import proyecto.deporte.javafx.model.dto.AuthResponseDTO;
+import proyecto.deporte.javafx.model.dto.UserDTO;
 import proyecto.deporte.javafx.model.enums.Role;
 import proyecto.deporte.javafx.service.api.AuthApiClient;
 import javafx.application.Platform;
@@ -57,7 +58,8 @@ public class LoginController extends BaseController {
     }
 
     private void onLoginSuccess(AuthResponseDTO auth) {
-        if (auth.getUser().getRole() != Role.ADMIN) {
+        // El backend devuelve role como String ("ADMIN" o "USER")
+        if (!"ADMIN".equals(auth.getRole())) {
             Platform.runLater(() -> {
                 loadingIndicator.setVisible(false);
                 errorLabel.setText("Acceso denegado: Solo administradores");
@@ -66,7 +68,13 @@ public class LoginController extends BaseController {
             return;
         }
 
-        SessionManager.getInstance().setSession(auth.getToken(), auth.getUser());
+        // Construimos UserDTO manualmente desde AuthResponseDTO
+        UserDTO user = new UserDTO();
+        user.setEmail(auth.getEmail());
+        user.setName(auth.getName());
+        user.setRole(Role.valueOf(auth.getRole()));
+
+        SessionManager.getInstance().setSession(auth.getToken(), user);
 
         Platform.runLater(() -> {
             try {

@@ -1,1 +1,8 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.dashboard.DashboardController"">`n  <Label text=""Dashboard""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.dashboard.DashboardController" spacing="20" alignment="CENTER" style="-fx-padding: 40;">
+  <Label text="Bienvenido al Panel de Administracion" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+  <Label text="SportCenter Admin" style="-fx-font-size: 18px;"/>
+  <Label text="Selecciona una opcion del menu lateral para comenzar." wrapText="true"/>
+</VBox>

@@ -1,1 +1,44 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<?import javafx.scene.chart.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.stats.StatsController"" spacing=""10"">`n  <Label text=""Estadisticas Globales"" style=""-fx-font-size: 20px;""/>`n  <PieChart fx:id=""courtOccupancyChart"" title=""Ocupacion de Pistas""/>`n  <BarChart fx:id=""sportUsageChart"" title=""Deportes mas usados"">`n    <xAxis><CategoryAxis label=""Deporte""/></xAxis>`n    <yAxis><NumberAxis label=""Usos""/></yAxis>`n  </BarChart>`n  <LineChart fx:id=""monthlyEvolutionChart"" title=""Evolucion mensual"">`n    <xAxis><CategoryAxis label=""Mes""/></xAxis>`n    <yAxis><NumberAxis label=""Reservas""/></yAxis>`n  </LineChart>`n  <BarChart fx:id=""topPlayersChart"" title=""Top 10 Jugadores"">`n    <xAxis><CategoryAxis label=""Jugador""/></xAxis>`n    <yAxis><NumberAxis label=""Victorias""/></yAxis>`n  </BarChart>`n  <TableView fx:id=""rankingTable""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.stats.StatsController" spacing="10" style="-fx-padding: 20;">
+  <Label text="Estadisticas Globales" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+  
+  <HBox spacing="10">
+    <DatePicker fx:id="fromDate"/>
+    <DatePicker fx:id="toDate"/>
+    <ComboBox fx:id="sportFilter"/>
+    <Button text="Actualizar" onAction="#handleRefresh"/>
+  </HBox>
+  
+  <ProgressIndicator fx:id="loadingIndicator"/>
+  
+  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+    <VBox spacing="20">
+      <PieChart fx:id="courtOccupancyChart" title="% Ocupacion de Pistas"/>
+      <BarChart fx:id="sportUsageChart" title="Deportes mas usados">
+        <xAxis><CategoryAxis label="Deporte"/></xAxis>
+        <yAxis><NumberAxis label="Usos"/></yAxis>
+      </BarChart>
+      <LineChart fx:id="monthlyEvolutionChart" title="Evolucion mensual de reservas">
+        <xAxis><CategoryAxis label="Mes"/></xAxis>
+        <yAxis><NumberAxis label="Reservas"/></yAxis>
+      </LineChart>
+      <BarChart fx:id="topPlayersChart" title="Top 10 Jugadores mas activos">
+        <xAxis><CategoryAxis label="Jugador"/></xAxis>
+        <yAxis><NumberAxis label="Victorias"/></yAxis>
+      </BarChart>
+      <Label text="Ranking Global" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+      <TableView fx:id="rankingTable">
+        <columns>
+          <TableColumn fx:id="colRank" text="Pos" prefWidth="50"/>
+          <TableColumn fx:id="colPlayerName" text="Jugador" prefWidth="150"/>
+          <TableColumn fx:id="colWins" text="Victorias" prefWidth="80"/>
+          <TableColumn fx:id="colLosses" text="Derrotas" prefWidth="80"/>
+          <TableColumn fx:id="colWinRate" text="% Victorias" prefWidth="100"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </ScrollPane>
+</VBox>

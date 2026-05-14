@@ -1,5 +1,6 @@
 package proyecto.deporte.javafx.service.api;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import proyecto.deporte.javafx.config.ApiConfig;
@@ -33,6 +34,19 @@ public abstract class ApiClient {
             .thenApply(body -> {
                 try {
                     return mapper.readValue(body, responseType);
+                } catch (Exception e) {
+                    throw new ApiException("Error parseando JSON: " + e.getMessage());
+                }
+            });
+    }
+
+    protected <T> CompletableFuture<T> sendAsync(HttpRequest request, TypeReference<T> typeRef) {
+        return HttpClientProvider.get()
+            .sendAsync(request, HttpResponse.BodyHandlers.ofString())
+            .thenApply(this::handleResponse)
+            .thenApply(body -> {
+                try {
+                    return mapper.readValue(body, typeRef);
                 } catch (Exception e) {
                     throw new ApiException("Error parseando JSON: " + e.getMessage());
                 }

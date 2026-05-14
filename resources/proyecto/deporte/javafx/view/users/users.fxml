@@ -1,1 +1,20 @@
-<?xml version=""1.0"" encoding=""UTF-8""?>`n<?import javafx.scene.layout.*?>`n<VBox xmlns:fx=""http://javafx.com/fxml"" fx:controller=""proyecto.deporte.javafx.controller.users.UsersController"">`n  <Label text=""Gestion de Usuarios""/>`n</VBox>
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="proyecto.deporte.javafx.controller.users.UsersController" spacing="10" style="-fx-padding: 20;">
+  <Label text="Gestion de Usuarios" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+  <TextField fx:id="searchField" promptText="Buscar por email o nombre..." maxWidth="300"/>
+  <ProgressIndicator fx:id="loadingIndicator"/>
+  <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+    <columns>
+      <TableColumn fx:id="colId" text="ID" prefWidth="180"/>
+      <TableColumn fx:id="colName" text="Nombre" prefWidth="120"/>
+      <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+      <TableColumn fx:id="colAge" text="Edad" prefWidth="60"/>
+      <TableColumn fx:id="colGender" text="Genero" prefWidth="80"/>
+      <TableColumn fx:id="colLevel" text="Nivel" prefWidth="80"/>
+      <TableColumn fx:id="colRole" text="Rol" prefWidth="80"/>
+      <TableColumn fx:id="colActions" text="Acciones" prefWidth="200"/>
+    </columns>
+  </TableView>
+</VBox>
